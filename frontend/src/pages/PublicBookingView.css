@@ -1,0 +1,138 @@
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.date-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.date-chip {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.date-chip:hover {
+  border-color: var(--cyan-blue);
+  background: var(--cyan-blue-light);
+}
+
+.date-chip.selected {
+  background: var(--cyan-blue);
+  border-color: var(--cyan-blue);
+  color: white;
+  box-shadow: var(--shadow-cyan);
+}
+
+.date-chip.selected .day-name,
+.date-chip.selected .month-name {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.day-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.day-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.month-name {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.time-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.time-chip {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.time-chip:not(:disabled):hover {
+  border-color: var(--cyan-blue);
+  background: var(--cyan-blue-light);
+}
+
+.time-chip.selected {
+  background: var(--cyan-blue);
+  border-color: var(--cyan-blue);
+  color: white;
+  box-shadow: var(--shadow-cyan);
+}
+
+.time-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+.time-chip.booked {
+  text-decoration: line-through;
+}
+
+.error-alert {
+  background: #fef2f2;
+  color: var(--danger);
+  border: 1px solid #fecaca;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.success-card {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selected-summary {
+  background: var(--cyan-blue-light);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: var(--navy-blue);
+  border: 1px solid rgba(0, 188, 212, 0.2);
+}
