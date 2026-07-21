@@ -4,7 +4,7 @@ import { format, addDays, isSameDay, parseISO } from 'date-fns';
 import { Calendar as CalendarIcon, Clock, User, Phone, CheckCircle } from 'lucide-react';
 import './PublicBookingView.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.DEV ? 'http://localhost:3001/api' : '/api';
 
 const TIME_SLOTS = [
   '09:00', '10:00', '11:00', '12:00', '13:00', 

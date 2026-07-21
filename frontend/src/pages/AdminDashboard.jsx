@@ -5,7 +5,7 @@ import { Calendar as CalendarIcon, Clock, User, Phone, CheckCircle, XCircle, Log
 import { format, parseISO } from 'date-fns';
 import './AdminDashboard.css';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.DEV ? 'http://localhost:3001/api' : '/api';
 
 export default function AdminDashboard() {
   const [bookings, setBookings] = useState([]);
